@@ -5,8 +5,6 @@ abstract class ListAllSongsEvent extends Equatable {
 }
 
 class OnLoadAllSongsEvent extends ListAllSongsEvent {
-
-
   @override
-  List<Object?> get props => throw UnimplementedError();
+  List<Object?> get props => [];
 }

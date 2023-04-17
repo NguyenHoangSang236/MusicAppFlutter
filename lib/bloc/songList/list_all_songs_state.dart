@@ -14,3 +14,12 @@ class ListAllSongsLoadingState extends ListAllSongsState {
   List<Object> get props => [];
 }
 
+class ListAllSongsLoadedState extends ListAllSongsState {
+  final List<Reference>? refList;
+
+  const ListAllSongsLoadedState(this.refList);
+
+  @override
+  List<Object?> get props => [refList];
+}
+

@@ -1,6 +1,9 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class Layout extends StatefulWidget {
   const Layout({
@@ -46,14 +49,7 @@ class _LayoutState extends State<Layout> {
                     ),
                   ),
                   onTap: () async {
-                    final Reference storageRef = FirebaseStorage.instance.ref().child('');
-                    final ListResult listResult = await storageRef.listAll();
-                    for (Reference elem in listResult.prefixes) {
-                      print(elem.name);
-                    }
-                    // for (var item in listResult.items) {
-                    //   // The items under storageRef.
-                    // }
+
                   },
                 ),
                 Container(
