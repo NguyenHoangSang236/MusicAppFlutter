@@ -25,52 +25,61 @@ class _LayoutState extends State<Layout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffedeff2),
-      body: Column(
-        children: [
-          Container(
-            constraints: const BoxConstraints(
-              maxHeight: 150,
-            ),
-            padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                GestureDetector(
-                  child: Container(
+      body: Container(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              end: Alignment(-1, 3),
+              begin: Alignment(1, -3),
+              colors: [Color(0xff2600be), Color(0xff280047), Color(0xff760181)]
+            )
+        ),
+        child: Column(
+          children: [
+            Container(
+              constraints: const BoxConstraints(
+                maxHeight: 150,
+              ),
+              padding: const EdgeInsets.fromLTRB(15, 45, 15, 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  GestureDetector(
+                    child: Container(
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                          color: Colors.transparent,
+                          borderRadius: BorderRadius.circular(50),
+                          image: const DecorationImage(
+                          image: AssetImage('assets/musicAppLogo.png'),
+                          fit: BoxFit.cover
+                        )
+                      ),
+                    ),
+                    onTap: () async {
+
+                    },
+                  ),
+                  Container(
                     height: 45,
                     width: 45,
+                    alignment: Alignment.center,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(12),
-                        image: const DecorationImage(
-                        image: AssetImage('assets/avatar.png'),
-                        fit: BoxFit.cover
-                      )
+                      borderRadius: BorderRadius.circular(12),
+                      color: Colors.white
                     ),
-                  ),
-                  onTap: () async {
-
-                  },
-                ),
-                Container(
-                  height: 45,
-                  width: 45,
-                  alignment: Alignment.center,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: Colors.white
-                  ),
-                  child: SizedBox(
-                    width: 24,
-                    height: 24,
-                    child: Image.asset('assets/searchIcon.png'),
-                  ),
-                )
-              ],
+                    child: SizedBox(
+                      width: 24,
+                      height: 24,
+                      child: Image.asset('assets/searchIcon.png'),
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-          widget.body,
-        ],
+            widget.body,
+          ],
+        ),
       ),
     );
   }
